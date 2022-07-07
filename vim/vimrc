@@ -75,18 +75,18 @@ nnoremap <Space><Space> /++<CR>2xi
 " it file is markdown, html, ms (groff) or txt, sets line wrap without slicing words.
 " other files keeps without wrap
 function DocSettings()
-	HardPencil
+    HardPencil
 endfunction
 
 function GroffSettings()
-	call DocSettings()
-	set filetype=groff
+    call DocSettings()
+    set filetype=groff
 endfunction
 
 augroup doc_settings
-	autocmd!
-	autocmd BufNewFile,BufRead *.md,*.html,*.txt,*.ms call DocSettings()
-	autocmd BufNewFile,BufRead *.ms,*.1,*.2,*.3,*.4,*.5,*.6,*.7 call GroffSettings()
+    autocmd!
+    autocmd BufNewFile,BufRead *.md,*.html,*.txt,*.ms call DocSettings()
+    autocmd BufNewFile,BufRead *.ms,*.1,*.2,*.3,*.4,*.5,*.6,*.7 call GroffSettings()
 augroup END
 " }}}
 
